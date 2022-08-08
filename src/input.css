@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("./font/Montserrat-Regular.ttf");
+  font-display: swap;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bg-coffee {
+  background-color: #251F1F;
+}
+
+.text-coffee {
+  color: #251F1F;
+}

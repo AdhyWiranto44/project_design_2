@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/dist/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="fonts" href="font/Montserrat-Regular.ttf">
+  <title>Project Design 2</title>
+</head>
+<body class="bg-coffee flex">
+  <div id="sidebar" class="bg-coffee text-slate-300 h-screen fixed flex items-center w-28">
+    <ul class="text-sm my-0 flex -rotate-90 relative -left-52">
+      <li class="mx-6 font-semibold cursor-pointer duration-300 text-white">Coffee</li>
+      <li class="mx-6 cursor-pointer duration-300 hover:text-white">Tea</li>
+      <li class="mx-6 cursor-pointer duration-300 hover:text-white">Juice</li>
+      <li class="mx-6 cursor-pointer duration-300 hover:text-white">Meal</li>
+      <li class="mx-6 cursor-pointer duration-300 hover:text-white">Snack</li>
+      <li class="mx-6 cursor-pointer duration-300 hover:text-white">Dessert</li>
+    </ul>
+  </div>
+  <div id="main" class="bg-slate-100 h-screen w-full ml-28 overflow-auto p-8" style="border-radius: 45px 0 0 45px;">
+    <div id="topbar" class="flex justify-between items-center">
+      <div id="leftmenu" class="flex items-center">
+        <h1 class="font-bold text-3xl mr-10">Coffee</h1>
+        <div id="searchbar" class="flex items-center bg-white py-2 px-4 rounded-xl shadow-md shadow-gray-200">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search text-slate-400 mr-4" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+          <input class="" type="text" placeholder="Search for coffee, food, etc" style="width: 550px;">
+        </div>
+      </div>
+      <div id="rightmenu" class="flex items-center">
+        <a href="#" class="bg-white p-3 rounded-full duration-300 hover:bg-slate-200 shadow-md shadow-gray-200 mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+          </svg>
+        </a>
+        <a href="#" class="bg-white p-3 rounded-full duration-300 hover:bg-slate-200 shadow-md shadow-gray-200 mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+          </svg>
+        </a>
+        <a href="#" class="bg-white p-3 rounded-full duration-300 hover:bg-slate-200 shadow-md shadow-gray-200 mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+          </svg>
+        </a>
+        <div class="flex items-center">
+          <img class="rounded-full mr-3" src="img/profile.jpg" alt="" width="48">
+          <p class="mr-3">Cashier</p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down ml-2" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div id="canvas" class="flex justify-between">
+      <div id="left" class="w-8/12">
+        <div id="tabs" class="my-8">
+          <ul class="flex">
+            <li class="bg-coffee text-white px-4 py-2 rounded-2xl cursor-pointer mr-3">All</li>
+            <li class="duration-300 hover:bg-slate-200 px-4 py-2 rounded-2xl cursor-pointer mr-3">Espresso</li>
+            <li class="duration-300 hover:bg-slate-200 px-4 py-2 rounded-2xl cursor-pointer mr-3">Cappuccino</li>
+            <li class="duration-300 hover:bg-slate-200 px-4 py-2 rounded-2xl cursor-pointer mr-3">Latte</li>
+            <li class="duration-300 hover:bg-slate-200 px-4 py-2 rounded-2xl cursor-pointer mr-3">Mocha</li>
+            <li class="duration-300 hover:bg-slate-200 px-4 py-2 rounded-2xl cursor-pointer mr-3">Macchiato</li>
+          </ul>
+        </div>
+        <div id="menus" class="">
+          <div id="card" class="bg-white duration-300 hover:shadow-xl shadow-slate-200 inline-block p-4 rounded-3xl relative mr-3 mb-3">
+            <div class="w-full text-right absolute -left-2 top-2">
+              <button class="duration-300 bg-orange-400 hover:bg-orange-500 active:bg-orange-600 p-3 rounded-full shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down text-white" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </button>
+            </div>
+            <img src="img/coffee.jpeg" alt="Coffee" class="rounded-2xl shadow-lg shadow-gray-400" width="220px">
+            <div class="flex justify-between mt-4">
+              <h2 class="font-semibold">Espresso</h2>
+              <h2 class="font-semibold">$2.6</h2>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <p class="text-sm text-slate-400">Add plant milk</p>
+              <button class="duration-300 p-1 border border-slate-400 hover:bg-slate-400 text-slate-400 rounded-full hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="flex mt-4 justify-around">
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Tall</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Grande</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Venti</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Trenta</p>
+              </div>
+            </div>
+          </div>
+          <div id="card" class="bg-white duration-300 hover:shadow-xl shadow-slate-200 inline-block p-4 rounded-3xl relative mr-3 mb-3">
+            <div class="w-full text-right absolute -left-2 top-2">
+              <button class="duration-300 bg-orange-400 hover:bg-orange-500 active:bg-orange-600 p-3 rounded-full shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down text-white" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </button>
+            </div>
+            <img src="img/coffee.jpeg" alt="Coffee" class="rounded-2xl shadow-lg shadow-gray-400" width="220px">
+            <div class="flex justify-between mt-4">
+              <h2 class="font-semibold">Espresso</h2>
+              <h2 class="font-semibold">$2.6</h2>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <p class="text-sm text-slate-400">Add plant milk</p>
+              <button class="duration-300 p-1 border border-slate-400 hover:bg-slate-400 text-slate-400 rounded-full hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="flex mt-4 justify-around">
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Tall</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Grande</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Venti</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Trenta</p>
+              </div>
+            </div>
+          </div>
+          <div id="card" class="bg-white duration-300 hover:shadow-xl shadow-slate-200 inline-block p-4 rounded-3xl relative mr-3 mb-3">
+            <div class="w-full text-right absolute -left-2 top-2">
+              <button class="duration-300 bg-orange-400 hover:bg-orange-500 active:bg-orange-600 p-3 rounded-full shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down text-white" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </button>
+            </div>
+            <img src="img/coffee.jpeg" alt="Coffee" class="rounded-2xl shadow-lg shadow-gray-400" width="220px">
+            <div class="flex justify-between mt-4">
+              <h2 class="font-semibold">Espresso</h2>
+              <h2 class="font-semibold">$2.6</h2>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <p class="text-sm text-slate-400">Add plant milk</p>
+              <button class="duration-300 p-1 border border-slate-400 hover:bg-slate-400 text-slate-400 rounded-full hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="flex mt-4 justify-around">
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Tall</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Grande</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Venti</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Trenta</p>
+              </div>
+            </div>
+          </div>
+          <div id="card" class="bg-white duration-300 hover:shadow-xl shadow-slate-200 inline-block p-4 rounded-3xl relative mr-3 mb-3">
+            <div class="w-full text-right absolute -left-2 top-2">
+              <button class="duration-300 bg-orange-400 hover:bg-orange-500 active:bg-orange-600 p-3 rounded-full shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down text-white" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </button>
+            </div>
+            <img src="img/coffee.jpeg" alt="Coffee" class="rounded-2xl shadow-lg shadow-gray-400" width="220px">
+            <div class="flex justify-between mt-4">
+              <h2 class="font-semibold">Espresso</h2>
+              <h2 class="font-semibold">$2.6</h2>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <p class="text-sm text-slate-400">Add plant milk</p>
+              <button class="duration-300 p-1 border border-slate-400 hover:bg-slate-400 text-slate-400 rounded-full hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="flex mt-4 justify-around">
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Tall</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Grande</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Venti</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Trenta</p>
+              </div>
+            </div>
+          </div>
+          <div id="card" class="bg-white duration-300 hover:shadow-xl shadow-slate-200 inline-block p-4 rounded-3xl relative mr-3 mb-3">
+            <div class="w-full text-right absolute -left-2 top-2">
+              <button class="duration-300 bg-orange-400 hover:bg-orange-500 active:bg-orange-600 p-3 rounded-full shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down text-white" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </button>
+            </div>
+            <img src="img/coffee.jpeg" alt="Coffee" class="rounded-2xl shadow-lg shadow-gray-400" width="220px">
+            <div class="flex justify-between mt-4">
+              <h2 class="font-semibold">Espresso</h2>
+              <h2 class="font-semibold">$2.6</h2>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <p class="text-sm text-slate-400">Add plant milk</p>
+              <button class="duration-300 p-1 border border-slate-400 hover:bg-slate-400 text-slate-400 rounded-full hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="flex mt-4 justify-around">
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Tall</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Grande</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Venti</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Trenta</p>
+              </div>
+            </div>
+          </div>
+          <div id="card" class="bg-white duration-300 hover:shadow-xl shadow-slate-200 inline-block p-4 rounded-3xl relative mr-3 mb-3">
+            <div class="w-full text-right absolute -left-2 top-2">
+              <button class="duration-300 bg-orange-400 hover:bg-orange-500 active:bg-orange-600 p-3 rounded-full shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down text-white" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+              </button>
+            </div>
+            <img src="img/coffee.jpeg" alt="Coffee" class="rounded-2xl shadow-lg shadow-gray-400" width="220px">
+            <div class="flex justify-between mt-4">
+              <h2 class="font-semibold">Espresso</h2>
+              <h2 class="font-semibold">$2.6</h2>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <p class="text-sm text-slate-400">Add plant milk</p>
+              <button class="duration-300 p-1 border border-slate-400 hover:bg-slate-400 text-slate-400 rounded-full hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="flex mt-4 justify-around">
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Tall</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Grande</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Venti</p>
+              </div>
+              <div class="flex-col">
+                <button class="duration-300 hover:bg-orange-100 active:bg-orange-200 rounded-full p-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+                </button>
+                <p class="text-xs text-center mt-2">Trenta</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="right" class="w-4/12 mt-8">
+        <div id="card" class="bg-white p-6 rounded-3xl">
+          <div class="flex justify-between mb-6">
+            <h2 class="font-semibold">Order #4499</h2>
+            <button class="text-sm text-slate-400 duration-300 rounded-xl px-2 py-1 hover:bg-slate-400 hover:text-white">Free All</button>
+          </div>
+          <div id="item" class="flex justify-between items-center mb-3">
+            <div class="flex items-center">
+              <img src="img/coffee_square.jpeg" alt="Coffee" width="48px" class="rounded-xl">
+              <div class="ml-2">
+                <p class="text-sm">Espresso</p>
+                <p class="text-sm font-semibold">$2.6</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <button class="border text-orange-400 border-orange-400 duration-300 hover:bg-orange-400 hover:text-white rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+              <p class="text-sm mx-3">1</p>
+              <button class="border text-orange-400 border-orange-400 duration-300 hover:bg-orange-400 hover:text-white rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="item" class="flex justify-between items-center mb-3">
+            <div class="flex items-center">
+              <img src="img/coffee_square.jpeg" alt="Coffee" width="48px" class="rounded-xl">
+              <div class="ml-2">
+                <p class="text-sm">Espresso</p>
+                <p class="text-sm font-semibold">$2.6</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <button class="border text-orange-400 border-orange-400 duration-300 hover:bg-orange-400 hover:text-white rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+              <p class="text-sm mx-3">1</p>
+              <button class="border text-orange-400 border-orange-400 duration-300 hover:bg-orange-400 hover:text-white rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="item" class="flex justify-between items-center mb-3">
+            <div class="flex items-center">
+              <img src="img/coffee_square.jpeg" alt="Coffee" width="48px" class="rounded-xl">
+              <div class="ml-2">
+                <p class="text-sm">Espresso</p>
+                <p class="text-sm font-semibold">$2.6</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <button class="border text-orange-400 border-orange-400 duration-300 hover:bg-orange-400 hover:text-white rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+              <p class="text-sm mx-3">1</p>
+              <button class="border text-orange-400 border-orange-400 duration-300 hover:bg-orange-400 hover:text-white rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="item" class="flex justify-between items-center mb-3">
+            <div class="flex items-center">
+              <img src="img/coffee_square.jpeg" alt="Coffee" width="48px" class="rounded-xl">
+              <div class="ml-2">
+                <p class="text-sm">Espresso</p>
+                <p class="text-sm font-semibold">$2.6</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <button class="border text-orange-400 border-orange-400 duration-300 hover:bg-orange-400 hover:text-white rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+              <p class="text-sm mx-3">1</p>
+              <button class="border text-orange-400 border-orange-400 duration-300 hover:bg-orange-400 hover:text-white rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="item" class="flex justify-between items-center mb-3">
+            <div class="flex items-center">
+              <img src="img/coffee_square.jpeg" alt="Coffee" width="48px" class="rounded-xl">
+              <div class="ml-2">
+                <p class="text-sm">Espresso</p>
+                <p class="text-sm font-semibold">$2.6</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <button class="border text-orange-400 border-orange-400 duration-300 hover:bg-orange-400 hover:text-white rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+              <p class="text-sm mx-3">1</p>
+              <button class="border text-orange-400 border-orange-400 duration-300 hover:bg-orange-400 hover:text-white rounded-full p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div id="bill" class="mt-8">
+            <div class="bg-slate-100 py-4 px-8 rounded-t-2xl border-b-4 border-dashed">
+              <div class="flex justify-between">
+                <p class="font-semibold text-slate-600">Subtotal</p>
+                <p class=" text-slate-600">$11.8</p>
+              </div>
+              <div class="flex justify-between">
+                <p class="text-slate-600">Discount sales</p>
+                <p class=" text-slate-600">$0</p>
+              </div>
+              <div class="flex justify-between">
+                <p class="text-slate-600">Tax</p>
+                <p class=" text-slate-600">$4.99</p>
+              </div>
+            </div>
+            <div class="bg-slate-100 py-4 px-8 rounded-b-2xl">
+              <div class="flex justify-between">
+                <p class="font-semibold">Total</p>
+                <p class="font-semibold">$16.79</p>
+              </div>
+            </div>
+            <div class="flex justify-between relative">
+              <div class="bg-white rounded-full absolute" style="width: 20px; height: 20px; top: -67px; left: -10px;"></div>
+              <div class="bg-white rounded-full absolute right-0" style="width: 20px; height: 20px; top: -67px; right: -10px;"></div>
+            </div>
+            <button class="w-full duration-300 bg-coffee hover:bg-black text-white text-sm py-4 rounded-2xl mt-6">Print bills</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
